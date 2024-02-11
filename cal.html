@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        #b1{
+            width: 25%;
+            height: 15%;
+        }
+        #b2{
+            width: 77%;
+        }
+        #b1:hover{
+            cursor: pointer;
+            box-shadow: inset -3px -3px 6px rgba(9 4, 94, 94, .7);
+        }
+        #cal{
+              padding-left: 30%;
+              padding-right: 30%;
+              padding-top: 10%;
+              
+        }
+        #calculator{
+            width: 308px;
+            
+        }
+        #calculator:hover{
+            box-shadow: rgb(26, 24, 24);
+        }
+    </style>
+</head>
+<body>
+    <div id="cal">
+    <input id="calculator">
+    <br>
+    <br>
+    <button id="b1" onClick="fun(1)">1</button>
+    <button id="b1" onClick="fun(2)">2</button>
+    <button id="b1" onClick="fun(3)">3</button>
+    <button id="b1" onClick="fun(4)">4</button>
+    <button id="b1" onClick="fun(5)">5</button>
+    <button id="b1" onClick="fun(6)">6</button>
+    <button id="b1" onClick="fun(7)">7</button>
+    <button id="b1" onClick="fun(8)">8</button>
+    <button id="b1" onClick="fun(9)">9</button>
+    <button id="b1" onClick="fun(0)">0</button>
+    <button id="b1" onClick="fun('+')">+</button>
+    <button id="b1" onClick="fun('-')">-</button>
+    <button id="b1" onClick="fun('%')">%</button>
+    <button id="b1" onClick="fun('*')">*</button>
+    <button id="b1" onClick="fun('.')">.</button>
+    <button id="b1" onClick='fun("(")'>(</button>
+    <button id="b1" onClick='fun(")")'>)</button>
+    <button id="b1" onClick="calculate()">=</button>
+    <button id="b2" onclick="document.getElementById('calculator').value = ''">Clear</button>
+</div>
+    <script>
+        function fun(x){
+            document.getElementById('calculator').value +=x;
+        }
+        function calculate(){
+            try{
+                res = eval(document.getElementById('calculator').value);
+            }
+            catch(Exception){
+                alert('Error');
+                document.getElementById('calculator').value = '';
+            }
+            document.getElementById('calculator').value = res;
+        }
+        function del(){
+            x = document.getElementById('calculator').value;
+            document.getElementById('calculator').value = x.slice(0,x.length-1);
+
+        }
+        
+    </script>
+</body>
+</html>
